@@ -1,5 +1,10 @@
 # ChatGPT Console Application
-.NET core C# application that allows the user to interact with chatGPT. Utilizes OpenAI API.
+.NET core C# application that allows the user to interact with ChatGPT. Utilizes OpenAI API.
+
+Simply type any prompt/question you desire and ChatGPT will answer you, directly in the console!
+Then, when you are done, simply enter "quit". 
+
+Note, in one session your chat history is remembered, so you can give ChatGPT follow up prompts!
 
 # NOTE
 A file named "App.config" must be added in the console_app directory with the following content & your api_key:
