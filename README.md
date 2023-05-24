@@ -6,21 +6,12 @@ Then, when you are done, simply enter "quit".
 
 Note, in one session your chat history is remembered, so you can give ChatGPT follow up prompts!
 
-# NOTE
-A file named "App.config" must be added in the console_app directory with the following content & your api_key:
-```
-<?xml version="1.0" encoding="utf-8" ?>  
-<configuration>  
-    <startup>   
-        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
-    </startup>  
-  <appSettings>
-    <add key="apiKey" value="YOUR API KEY HERE" />
-  </appSettings>  
-</configuration>
-```
-
-As you can see from the above, you will need to get an API key from OpenAI
-
 # To Run
-You can run the above code in Visual Studio as long as the proper packages are installed
+Navigate to "console_app/release/" and run the program that works on your machine
+
+# To Run in Debug mode in VS Code - API Key Setup Needed
+1. Get an OpenAI API key
+2. Add API key to your environmental variables with the name "OPENAI_API_KEY". See this article for instructions on how: https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety#h_a1ab3ba7b2
+3. If you have Windows it now should work
+4. If have MacOS (or possibly other). In order for Visual Studio to recognize your environment variable, VS must be run from the terminal (rather than the UI). See this article for detailed instructions: https://placona.co.uk/osx-pro-tip-for-environment-variables/
+
