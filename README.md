@@ -14,3 +14,5 @@ You must add a file named "App.config" in the console_app directory with the fol
   </appSettings>  
 </configuration>
 ```
+
+As you can see from the above, you will need to get an API key from OpenAI
