@@ -7,7 +7,7 @@ Then, when you are done, simply enter "quit".
 Note, in one session your chat history is remembered, so you can give ChatGPT follow up prompts!
 
 # To Run
-Navigate to "console_app/release/" and run the program that works on your machine
+Navigate into "toRun/" and run the executable that works on your machine
 
 # To Run in Debug mode in VS Code - API Key Setup Needed
 1. Get an OpenAI API key
