@@ -12,7 +12,8 @@ Note, in one session your chat history is remembered, so you can give ChatGPT fo
 3. Now you should be able to run the program as described below
 
 # To Run
-Navigate into "toRun/" and run the executable that works on your machine
+-  MacOS: Navigate into "toRun/" and run "console_app" executable
+- Other OSs: other steps may be needed. See this article in the "Running the applications on Windows" section: https://stackify.com/cross-platform-net-core-apps/
 
 
 # Debug mode in Visual Studio
