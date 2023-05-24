@@ -3,7 +3,6 @@
  */
 
 using System;
-using System.Configuration;
 using OpenAI_API;
 using OpenAI_API.Chat;
 
@@ -11,7 +10,8 @@ namespace console_app;
 
 public class ChatGPT
 {
-    private const string API_KEY_NAME = "apiKey";
+    private const string API_KEY_NAME = "OPENAI_API_KEY";
+    private const string INVALID_API_ERROR = "Invalid API KEY";
     private string? api_key;
     private OpenAIAPI api;
     private Conversation chat;
@@ -19,7 +19,8 @@ public class ChatGPT
     public ChatGPT()
     {
         // Reads api_key from App.config file
-        api_key = ConfigurationManager.AppSettings.Get(API_KEY_NAME);
+        api_key = getApiKey();
+        // Code to check if environmental variable not read
         api = new OpenAIAPI(new APIAuthentication(api_key));
         chat = api.Chat.CreateConversation();
     }
@@ -63,6 +64,17 @@ public class ChatGPT
 
         //return true;
 
+    }
+
+    // Fetches the API Key from the Environmental variable
+    private string getApiKey()
+    {
+        string? apiKey = Environment.GetEnvironmentVariable(API_KEY_NAME);
+        if (apiKey == null)
+        {
+            throw new Exception(INVALID_API_ERROR);
+        }
+        return apiKey;
     }
     
 }

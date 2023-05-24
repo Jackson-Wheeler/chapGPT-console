@@ -10,8 +10,8 @@ internal class Program
     static async Task Main(string[] args)
     {
         consoleIntro();
-        ChatGPT chat = new ChatGPT();
-
+        ChatGPT chat = chatGPTConnect();        
+     
         // Main loop - Ask question, read user inputted question, and submit to ChatGPT
         while (true)
         {
@@ -23,7 +23,7 @@ internal class Program
             await chat.askQuestion(prompt);
         }
 
-        finish();
+        finish(0);
     }
 
     // Print intro information to console for user
@@ -35,12 +35,29 @@ internal class Program
         Console.WriteLine();
     }
 
-    // End program
-    public static void finish()
+    // Attempts to connect to chatGPT, exits if error
+    public static ChatGPT chatGPTConnect()
+    {
+        ChatGPT chat = null;
+        try
+        {
+            chat = new ChatGPT();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            finish(1);
+        }
+        return chat;
+    }
+
+    // Terminates program with given status after user presses a key
+    public static void finish(int status)
     {
         Console.WriteLine();
         Console.Write($"{Environment.NewLine}Press any key to exit...");
         Console.ReadKey(true);
+        System.Environment.Exit(status);
     }
 
     // Code to test console output
